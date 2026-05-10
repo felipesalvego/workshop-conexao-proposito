@@ -1,49 +1,7 @@
-import { ArrowRight, Calendar, MapPin, Users, Sparkles, CreditCard, MessageCircle } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Users, Sparkles, CreditCard, MessageCircle, Coffee, Utensils, Handshake, Sparkle } from "lucide-react";
 
 const PAYMENT_LINK = "https://link.infinitepay.io/kattielleres-439/VC1DLTEtUg-127,00";
-const WA_DOUBTS = "https://wa.me/5511946033119?text=Tenho%20dúvidas%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
-
-const wa = (msg: string) =>
-  `https://wa.me/5511946033119?text=${encodeURIComponent(msg)}`;
-
-const servicos = [
-  {
-    icon: Sparkles,
-    title: "2º Workshop Conexão com Propósito",
-    badge: "⚠️ NR1 & Comportamento",
-    badgeTheme: "gold",
-    desc: "Um workshop premium para empresários e líderes que desejam fortalecer posicionamento, consciência e conexões estratégicas. Mais do que conteúdo. Uma experiência construída para provocar transformação, visão e relacionamento de alto valor.",
-    price: "R$ 127",
-    priceFrom: "R$ 254",
-    priceSuffix: "/ pessoa",
-    cta: "Comprar Agora — R$127",
-    ctaIcon: CreditCard,
-    href: PAYMENT_LINK,
-    featured: true,
-  },
-  {
-    icon: Calendar,
-    title: "Data e Horário",
-    desc: "27 de maio de 2026, das 19h30 às 21h30. Um encontro estratégico ao fim do dia.",
-    cta: "Ver local",
-    href: "https://maps.google.com/?q=Moage+Cafe+Belem+PA",
-  },
-  {
-    icon: MapPin,
-    title: "Local Premium",
-    desc: "Moage Café — Rua Antônio Barreto, 325. Belém, PA. Ambiente sofisticado e intimista.",
-    cta: "Ver no mapa",
-    href: "https://maps.google.com/?q=Moage+Cafe+Belem+PA",
-  },
-  {
-    icon: Users,
-    title: "Grupo Seleto",
-    desc: "Evento exclusivo para empresários. Vagas limitadas para garantir qualidade das conexões.",
-    cta: "Tire Dúvidas no WhatsApp",
-    ctaIcon: MessageCircle,
-    href: WA_DOUBTS,
-  },
-];
+const WHATSAPP_LINK = "https://wa.me/5511946033119?text=Quero%20saber%20mais%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
 
 export default function Servicos() {
   return (
@@ -52,76 +10,84 @@ export default function Servicos() {
       className="bg-[hsl(var(--green-mid))] py-20 sm:py-28 lg:py-32"
     >
       <div className="container max-w-7xl px-6 sm:px-10">
+        {/* SOBRE O EVENTO */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 mb-14 sm:mb-20 items-start">
           <div className="reveal">
             <span className="label-eyebrow">Sobre o Evento</span>
             <h2 className="heading-display">
               2º Workshop: <em className="not-italic font-serif italic text-gold">Conexão com Propósito</em>
             </h2>
+            <div className="inline-block mt-4 text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded font-semibold bg-gold/20 text-gold border border-gold/30">
+              ⚠️ NR1 & Comportamento
+            </div>
           </div>
-          <p className="body-text reveal" style={{ transitionDelay: "100ms" }}>
-            Cada detalhe deste workshop foi pensado para criar uma experiência sofisticada, estratégica e memorável. Do ambiente às conexões. Da conversa ao posicionamento.
-          </p>
+          <div className="reveal" style={{ transitionDelay: "100ms" }}>
+            <div className="bg-[hsl(var(--green-card))] border border-gold/20 p-6 rounded-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <Calendar size={20} className="text-gold" />
+                <div>
+                  <div className="font-serif text-lg text-cream">📅 27/05/2026</div>
+                  <div className="text-xs text-foreground/60">⏰ 19h30 às 21h30</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin size={20} className="text-gold" />
+                <div>
+                  <div className="font-serif text-base text-cream">📍 Moage Café</div>
+                  <div className="text-xs text-foreground/60">Rua Antônio Barreto, 325 — Belém/PA</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Sparkles size={20} className="text-gold" />
+                <div className="flex items-baseline gap-2">
+                  <span className="text-sm text-foreground/40 line-through">🎟️ R$254</span>
+                  <span className="font-serif text-2xl text-gold">por apenas R$127</span>
+                  <span className="text-[10px] tracking-wider uppercase text-gold bg-gold/15 px-2 py-1 rounded">50% OFF</span>
+                </div>
+              </div>
+              <p className="text-[10px] text-gold/70 mt-3">⚠️ 50% OFF por tempo limitado</p>
+            </div>
+          </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {servicos.map((s, i) => {
-            const Icon = s.icon;
-            const CtaIcon = s.ctaIcon || ArrowRight;
-            return (
-              <a
-                key={s.title}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                className={`group relative bg-[hsl(var(--green-card))] border border-border p-8 sm:p-10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/30 overflow-hidden flex flex-col reveal ${
-                  s.featured ? "sm:col-span-2 lg:col-span-3 ring-2 ring-gold/20" : ""
-                }`}
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <span className="absolute top-0 left-0 w-[3px] h-0 bg-gold group-hover:h-full transition-all duration-500" />
-
-                <div className="w-11 h-11 bg-gold/15 rounded-md flex items-center justify-center mb-6">
-                  <Icon size={20} className="text-gold" strokeWidth={1.5} />
+        {/* O QUE ESTÁ INCLUSO */}
+        <div className="mb-14 sm:mb-20">
+          <div className="reveal mb-8">
+            <span className="label-eyebrow">O que está incluso</span>
+            <h3 className="font-serif text-2xl sm:text-3xl text-cream">
+              Tudo pensado para você
+            </h3>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Coffee, text: "☕ Coffee Break Premium" },
+              { icon: Utensils, text: "🥐 Experiência gastronômica exclusiva" },
+              { icon: Handshake, text: "🤝 Networking de alto valor" },
+              { icon: Sparkle, text: "✨ Ambiente sofisticado e estratégico" },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.text} className="reveal flex items-center gap-3 p-4 bg-[hsl(var(--green-card))] border border-border rounded-sm hover:border-gold/30 transition-colors" style={{ transitionDelay: `${i * 60}ms` }}>
+                  <Icon size={20} className="text-gold" />
+                  <span className="text-sm text-foreground/80">{item.text}</span>
                 </div>
+              );
+            })}
+          </div>
+        </div>
 
-                <h3 className="font-serif text-2xl sm:text-[26px] text-cream mb-3 leading-tight">
-                  {s.title}
-                </h3>
-                <p className="text-[13px] sm:text-[14px] font-light leading-[1.85] text-foreground/70 mb-6 flex-1">
-                  {s.desc}
-                </p>
-
-                {s.price && (
-                  <div className="flex items-baseline gap-2 mb-4">
-                    {s.priceFrom && (
-                      <span className="text-[15px] text-foreground/35 line-through font-sans font-light">
-                        {s.priceFrom}
-                      </span>
-                    )}
-                    <span className="font-serif text-3xl sm:text-4xl font-light text-gold">
-                      {s.price}{" "}
-                      <small className="text-sm font-sans font-light">{s.priceSuffix}</small>
-                    </span>
-                  </div>
-                )}
-
-                {s.badge && (
-                  <div className={`inline-block text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded mb-4 font-semibold ${
-                    s.badgeTheme === "gold"
-                      ? "bg-gold/20 text-gold border border-gold/30"
-                      : "bg-gold/10 text-gold/80 border border-gold/20"
-                  }`}>
-                    {s.badge}
-                  </div>
-                )}
-
-                <span className="inline-flex items-center gap-2 group-hover:gap-3 transition-all text-[11px] tracking-[0.18em] uppercase text-gold">
-                  <CtaIcon size={14} /> {s.cta}
-                </span>
-              </a>
-            );
-          })}
+        {/* EXPERIÊNCIA PREMIUM */}
+        <div className="reveal bg-[hsl(var(--green-card))] border border-gold/20 p-8 sm:p-10 rounded-sm">
+          <span className="label-eyebrow">Experiência Premium</span>
+          <h3 className="font-serif text-2xl sm:text-3xl text-cream mb-4">
+            Cada detalhe foi pensado
+          </h3>
+          <p className="body-text max-w-2xl mb-4">
+            Cada detalhe deste workshop foi pensado para criar uma experiência sofisticada, estratégica e memorável.
+          </p>
+          <p className="body-text max-w-2xl">
+            Do ambiente às conexões. Da conversa ao posicionamento. Tudo foi construído para empresários que valorizam crescimento, relacionamento e visão.
+          </p>
         </div>
       </div>
     </section>

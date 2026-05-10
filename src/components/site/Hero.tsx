@@ -1,8 +1,8 @@
 import heroImg from "@/assets/katti-hero.png";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const PAYMENT_LINK = "https://link.infinitepay.io/kattielleres-439/VC1DLTEtUg-127,00";
-const WA_DOUBTS = "https://wa.me/5511946033119?text=Tenho%20dúvidas%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
+const WHATSAPP_LINK = "https://wa.me/5511946033119?text=Quero%20saber%20mais%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
 
 export default function Hero() {
   return (
@@ -41,42 +41,19 @@ export default function Hero() {
         </p>
 
         <p
-          className="text-sm sm:text-base text-foreground/70 max-w-md mb-8 animate-fade-up"
+          className="text-sm sm:text-base text-foreground/70 max-w-md mb-4 animate-fade-up"
           style={{ animationDelay: "0.65s", opacity: 0 }}
         >
           Um workshop premium para empresários e líderes que desejam fortalecer posicionamento, consciência e conexões estratégicas.
         </p>
 
-        {/* Event details card */}
-        <div
-          className="bg-[hsl(var(--green-card))] border border-gold/20 p-6 rounded-sm max-w-sm mb-8 animate-fade-up"
-          style={{ animationDelay: "0.7s", opacity: 0 }}
+        <p
+          className="text-sm sm:text-base text-foreground/70 max-w-md mb-8 animate-fade-up"
+          style={{ animationDelay: "0.68s", opacity: 0 }}
         >
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-2xl">📅</span>
-            <div>
-              <div className="font-serif text-lg text-cream">27/05/2026</div>
-              <div className="text-xs text-foreground/60">19h30 às 21h30</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-2xl">📍</span>
-            <div>
-              <div className="font-serif text-base text-cream">Moage Café</div>
-              <div className="text-xs text-foreground/60">Rua Antônio Barreto, 325 — Belém/PA</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-2xl">🎟️</span>
-            <div className="flex items-baseline gap-2">
-              <span className="text-sm text-foreground/40 line-through">R$254</span>
-              <span className="font-serif text-2xl text-gold">R$127</span>
-              <span className="text-[10px] tracking-wider uppercase text-gold bg-gold/15 px-2 py-1 rounded">50% OFF</span>
-            </div>
-          </div>
-        </div>
+          Mais do que conteúdo. Uma experiência construída para provocar transformação, visão e relacionamento de alto valor.
+        </p>
 
-        {/* CTAs - PRINCIPAL = PAGAMENTO */}
         <div
           className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up"
           style={{ animationDelay: "0.75s", opacity: 0 }}
@@ -85,25 +62,25 @@ export default function Hero() {
             href={PAYMENT_LINK}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-4 text-[11px] sm:text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-gold-light hover:-translate-y-0.5 transition-all shadow-lg"
+            className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-4 text-[11px] sm:text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-gold-light hover:-translate-y-0.5 transition-all"
           >
-            Comprar Agora — R$127 <ArrowRight size={14} />
+            Comprar Agora com 50% OFF <ArrowRight size={14} />
           </a>
           <a
-            href={WA_DOUBTS}
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center border border-gold/50 text-gold px-7 py-4 text-[11px] sm:text-[12px] font-medium tracking-[0.2em] uppercase hover:border-gold hover:bg-gold/10 hover:-translate-y-0.5 transition-all"
           >
-            <MessageCircle size={14} className="mr-2" /> Tire Dúvidas no WhatsApp
+            Saiba Mais
           </a>
         </div>
 
         <p
-          className="text-[10px] text-gold/70 mt-4 animate-fade-up flex items-center gap-1"
+          className="text-[10px] text-gold/70 mt-4 animate-fade-up"
           style={{ animationDelay: "0.8s", opacity: 0 }}
         >
-          ⚠️ Condição promocional por tempo limitado · Vagas limitadas
+          ⚠️ Condição promocional por tempo limitado
         </p>
       </div>
 

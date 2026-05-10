@@ -36,35 +36,23 @@ export default function Sobre() {
           <p className="body-text mb-4">
             O <strong className="text-cream font-medium">2º Workshop Conexão com Propósito</strong> nasce para empresários, profissionais e líderes que não desejam apenas adquirir informação.
           </p>
-          <p className="body-text text-gold font-medium">
+          <p className="body-text text-gold font-medium mb-6">
             Desejam acessar ambientes que transformam percepção.
           </p>
 
-          {/* O que está incluso */}
-          <div className="mt-10 grid grid-cols-2 gap-4">
+          {/* O que você vai viver */}
+          <div className="mt-8 space-y-3">
             {[
-              { icon: "☕", text: "Coffee Break Premium" },
-              { icon: "🥐", text: "Experiência gastronômica exclusiva" },
-              { icon: "🤝", text: "Networking de alto valor" },
-              { icon: "✨", text: "Ambiente sofisticado e estratégico" },
+              "✔ Networking estratégico",
+              "✔ Reflexões sobre comportamento e consciência",
+              "✔ Ambiente premium e intimista",
+              "✔ Conexões com empresários e líderes",
+              "✔ Experiência sofisticada e memorável",
             ].map((item) => (
-              <div key={item.text} className="flex items-center gap-3 text-sm text-foreground/80">
-                <span className="text-lg">{item.icon}</span>
-                <span>{item.text}</span>
+              <div key={item} className="text-sm text-foreground/80">
+                {item}
               </div>
             ))}
-          </div>
-
-          {/* CTA de compra */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <a
-              href={PAYMENT_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-4 text-[11px] font-semibold tracking-[0.22em] uppercase hover:bg-gold-light hover:-translate-y-0.5 transition-all shadow-lg"
-            >
-              <CreditCard size={14} /> Garantir Minha Vaga — R$127 <ArrowRight size={14} />
-            </a>
           </div>
         </div>
       </div>
