@@ -1,11 +1,14 @@
-import { ArrowRight, Phone, Mail, Calendar, MapPin } from "lucide-react";
+import { ArrowRight, Phone, Mail, Calendar, MapPin, MessageCircle, CreditCard } from "lucide-react";
+
+const PAYMENT_LINK = "https://link.infinitepay.io/kattielleres-439/VC1DLTEtUg-127,00";
+const WA_DOUBTS = "https://wa.me/5511946033119?text=Tenho%20dúvidas%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
 
 const contacts = [
   {
     icon: Phone,
     label: "WhatsApp",
     value: "+55 (11) 94603-3119",
-    href: "https://wa.me/5511946033119",
+    href: WA_DOUBTS,
   },
   {
     icon: Mail,
@@ -47,15 +50,23 @@ export default function Contato() {
           </p>
         </div>
 
-        {/* CTA Principal */}
-        <div className="flex justify-center mb-16 reveal" style={{ transitionDelay: "100ms" }}>
+        {/* CTA Principal - PAGAMENTO */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 reveal" style={{ transitionDelay: "100ms" }}>
           <a
-            href="https://wa.me/5511946033119?text=Quero%20garantir%20minha%20vaga%20no%20Workshop%20Conexão%20com%20Propósito%20com%2050%25%20OFF"
+            href={PAYMENT_LINK}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center gap-3 bg-gold text-primary-foreground px-10 py-5 text-[12px] sm:text-[13px] font-semibold tracking-[0.25em] uppercase hover:bg-gold-light hover:-translate-y-1 transition-all shadow-elegant"
           >
-            Comprar Agora via WhatsApp <ArrowRight size={16} />
+            <CreditCard size={16} /> Comprar Agora — R$127 <ArrowRight size={16} />
+          </a>
+          <a
+            href={WA_DOUBTS}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-3 border-2 border-gold/50 text-gold px-10 py-5 text-[12px] sm:text-[13px] font-semibold tracking-[0.25em] uppercase hover:border-gold hover:bg-gold/10 hover:-translate-y-1 transition-all"
+          >
+            <MessageCircle size={16} /> Tire Dúvidas no WhatsApp
           </a>
         </div>
 

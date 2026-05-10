@@ -1,5 +1,8 @@
 import heroImg from "@/assets/katti-hero.png";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+
+const PAYMENT_LINK = "https://link.infinitepay.io/kattielleres-439/VC1DLTEtUg-127,00";
+const WA_DOUBTS = "https://wa.me/5511946033119?text=Tenho%20dúvidas%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
 
 export default function Hero() {
   return (
@@ -73,31 +76,34 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* CTAs - PRINCIPAL = PAGAMENTO */}
         <div
           className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up"
           style={{ animationDelay: "0.75s", opacity: 0 }}
         >
           <a
-            href="https://wa.me/5511946033119?text=Quero%20garantir%20minha%20vaga%20no%20Workshop%20Conexão%20com%20Propósito%20com%2050%25%20OFF"
+            href={PAYMENT_LINK}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-4 text-[11px] sm:text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-gold-light hover:-translate-y-0.5 transition-all"
+            className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-4 text-[11px] sm:text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-gold-light hover:-translate-y-0.5 transition-all shadow-lg"
           >
-            Comprar Agora com 50% OFF <ArrowRight size={14} />
+            Comprar Agora — R$127 <ArrowRight size={14} />
           </a>
           <a
-            href="#sobre"
+            href={WA_DOUBTS}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center justify-center border border-gold/50 text-gold px-7 py-4 text-[11px] sm:text-[12px] font-medium tracking-[0.2em] uppercase hover:border-gold hover:bg-gold/10 hover:-translate-y-0.5 transition-all"
           >
-            Saber Mais
+            <MessageCircle size={14} className="mr-2" /> Tire Dúvidas no WhatsApp
           </a>
         </div>
 
         <p
-          className="text-[10px] text-gold/70 mt-4 animate-fade-up"
+          className="text-[10px] text-gold/70 mt-4 animate-fade-up flex items-center gap-1"
           style={{ animationDelay: "0.8s", opacity: 0 }}
         >
-          ⚠️ Condição promocional por tempo limitado
+          ⚠️ Condição promocional por tempo limitado · Vagas limitadas
         </p>
       </div>
 

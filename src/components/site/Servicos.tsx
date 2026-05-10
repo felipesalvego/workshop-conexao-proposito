@@ -1,4 +1,7 @@
-import { ArrowRight, Calendar, MapPin, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Users, Sparkles, CreditCard, MessageCircle } from "lucide-react";
+
+const PAYMENT_LINK = "https://link.infinitepay.io/kattielleres-439/VC1DLTEtUg-127,00";
+const WA_DOUBTS = "https://wa.me/5511946033119?text=Tenho%20dúvidas%20sobre%20o%20Workshop%20Conexão%20com%20Propósito";
 
 const wa = (msg: string) =>
   `https://wa.me/5511946033119?text=${encodeURIComponent(msg)}`;
@@ -13,8 +16,9 @@ const servicos = [
     price: "R$ 127",
     priceFrom: "R$ 254",
     priceSuffix: "/ pessoa",
-    cta: "Garantir Vaga com 50% OFF",
-    href: wa("Quero garantir minha vaga no Workshop Conexão com Propósito com 50% OFF"),
+    cta: "Comprar Agora — R$127",
+    ctaIcon: CreditCard,
+    href: PAYMENT_LINK,
     featured: true,
   },
   {
@@ -35,8 +39,9 @@ const servicos = [
     icon: Users,
     title: "Grupo Seleto",
     desc: "Evento exclusivo para empresários. Vagas limitadas para garantir qualidade das conexões.",
-    cta: "Reservar presença",
-    href: wa("Quero garantir minha vaga no Workshop"),
+    cta: "Tire Dúvidas no WhatsApp",
+    ctaIcon: MessageCircle,
+    href: WA_DOUBTS,
   },
 ];
 
@@ -62,6 +67,7 @@ export default function Servicos() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {servicos.map((s, i) => {
             const Icon = s.icon;
+            const CtaIcon = s.ctaIcon || ArrowRight;
             return (
               <a
                 key={s.title}
@@ -111,7 +117,7 @@ export default function Servicos() {
                 )}
 
                 <span className="inline-flex items-center gap-2 group-hover:gap-3 transition-all text-[11px] tracking-[0.18em] uppercase text-gold">
-                  {s.cta} <ArrowRight size={14} />
+                  <CtaIcon size={14} /> {s.cta}
                 </span>
               </a>
             );

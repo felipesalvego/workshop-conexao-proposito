@@ -1,4 +1,7 @@
 import portrait from "@/assets/katti-portrait.png";
+import { ArrowRight, CreditCard } from "lucide-react";
+
+const PAYMENT_LINK = "https://link.infinitepay.io/kattielleres-439/VC1DLTEtUg-127,00";
 
 export default function Sobre() {
   return (
@@ -50,6 +53,18 @@ export default function Sobre() {
                 <span>{item.text}</span>
               </div>
             ))}
+          </div>
+
+          {/* CTA de compra */}
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <a
+              href={PAYMENT_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-4 text-[11px] font-semibold tracking-[0.22em] uppercase hover:bg-gold-light hover:-translate-y-0.5 transition-all shadow-lg"
+            >
+              <CreditCard size={14} /> Garantir Minha Vaga — R$127 <ArrowRight size={14} />
+            </a>
           </div>
         </div>
       </div>
