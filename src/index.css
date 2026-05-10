@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Katti Elleres — Design System
+   All colors HSL. Tokens only.
+*/
+
+@layer base {
+  :root {
+    --background: 145 41% 8%;
+    --background-mid: 145 27% 10%;
+    --background-card: 142 30% 13%;
+    --foreground: 45 60% 91%;
+    --foreground-muted: 45 40% 75%;
+
+    --card: 142 30% 13%;
+    --card-foreground: 45 60% 91%;
+
+    --popover: 145 41% 8%;
+    --popover-foreground: 45 60% 91%;
+
+    --primary: 41 50% 55%;
+    --primary-glow: 38 65% 67%;
+    --primary-foreground: 145 41% 8%;
+
+    --secondary: 142 30% 13%;
+    --secondary-foreground: 45 60% 91%;
+
+    --muted: 142 25% 16%;
+    --muted-foreground: 45 25% 65%;
+
+    --accent: 41 50% 55%;
+    --accent-foreground: 145 41% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 45 60% 91%;
+
+    --border: 0 0% 100% / 0.07;
+    --input: 142 25% 18%;
+    --ring: 41 50% 55%;
+
+    --radius: 0.25rem;
+
+    /* Brand */
+    --gold: 41 50% 55%;
+    --gold-light: 38 65% 67%;
+    --gold-pale: 41 50% 55% / 0.15;
+    --cream: 45 60% 91%;
+    --green: 145 41% 8%;
+    --green-mid: 145 27% 10%;
+    --green-card: 142 30% 13%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    --gradient-overlay: linear-gradient(to right, hsl(var(--green)) 0%, transparent 35%),
+      linear-gradient(to top, hsl(var(--green)) 0%, transparent 30%);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-sans {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .label-eyebrow {
+    @apply inline-block text-[10px] sm:text-[11px] font-medium tracking-[0.25em] uppercase text-gold mb-3 sm:mb-4;
+  }
+
+  .heading-display {
+    font-family: 'Cormorant Garamond', serif;
+    @apply text-[clamp(2rem,6vw,3.5rem)] font-normal leading-[1.12] text-foreground;
+  }
+
+  .body-text {
+    @apply text-[14px] sm:text-[15px] font-light leading-[1.85] text-foreground/75;
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-up { animation: fade-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.animate-fade-in { animation: fade-in 1.4s ease forwards; }
