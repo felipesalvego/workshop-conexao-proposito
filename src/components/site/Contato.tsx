@@ -33,7 +33,7 @@ export default function Contato() {
             rel="noreferrer"
             className="inline-flex items-center justify-center gap-3 bg-gold text-primary-foreground px-10 py-5 text-[12px] sm:text-[13px] font-semibold tracking-[0.25em] uppercase hover:bg-gold-light hover:-translate-y-1 transition-all shadow-elegant"
           >
-            <CreditCard size={16} /> Comprar Agora via WhatsApp <ArrowRight size={16} />
+            <CreditCard size={16} /> Garanta agora sua presença <ArrowRight size={16} />
           </a>
           <a
             href={WHATSAPP_LINK}
