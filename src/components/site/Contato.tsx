@@ -11,7 +11,6 @@ export default function Contato() {
     >
       <div className="container max-w-7xl px-6 sm:px-10">
         <div className="text-center mb-14 reveal">
-          <span className="label-eyebrow">CTA Final</span>
           <h2 className="heading-display mb-6">
             Garanta sua vaga com <em className="not-italic font-serif italic text-gold">50% OFF</em>
           </h2>

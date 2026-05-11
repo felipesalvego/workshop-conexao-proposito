@@ -113,7 +113,7 @@ export default function Hero() {
         <img
           src={heroImg}
           alt="Katti Elleres, mentora e palestrante"
-          className="w-full h-full object-cover object-center animate-fade-in opacity-0"
+          className="w-full h-full object-contain object-center animate-fade-in opacity-0"
           loading="eager"
         />
       </div>
